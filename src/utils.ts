@@ -31,12 +31,8 @@ export const login = async (email: string, password: string) => {
   // メールアドレスとパスワードでログインする
   const result = await signInWithEmailAndPassword(auth, email, password);
 
-  console.log(result);
-
   // セッションIDを作成するためのIDを作成する
   const id = await result.user.getIdToken();
-
-  console.log(id);
 
   // Cookieにセッションを付与するようにAPIを投げる
   await fetch("/api/session", { method: "POST", body: JSON.stringify({ id }) });

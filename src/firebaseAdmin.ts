@@ -5,7 +5,6 @@ import admin from "firebase-admin";
  * @note 環境変数は`.env.local`ファイルに定義しています
  */
 
-console.log(process.env.FIREBASE_ADMIN_PROJECT_ID);
 const serviceAccount: admin.ServiceAccount = {
   projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,
   clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL,

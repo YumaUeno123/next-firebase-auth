@@ -29,8 +29,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const cookies = nookies.get(ctx);
   const session = cookies.session || "";
 
-  console.log(session);
-
   // セッションIDを検証して、認証情報を取得する
   const user = await firebaseAdmin
     .auth()
